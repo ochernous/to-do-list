@@ -2,6 +2,8 @@
 
 {% block content %}
   <h1>{{ object|yesno:"Update,Create" }} Tag</h1>
+  <hr>
+  <br>
   <form action="" method="post" novalidate>
     {% csrf_token %}
     {{ form.as_p }}
