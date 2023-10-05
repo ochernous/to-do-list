@@ -58,4 +58,3 @@ class TagDeleteView(generic.DeleteView):
 #         task.is_done = True
 #     task.save()
 #
-#     return reverse_lazy("todo:task-list")
