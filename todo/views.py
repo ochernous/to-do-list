@@ -1,7 +1,9 @@
-from django.shortcuts import render
+# from django.shortcuts import render
+from django.views import generic
 
 from todo.models import Tag, Task
 
 
-def index(request):
-    pass
+class TasksListView(generic.ListView):
+    model = Task
+    template_name = "todo/index.html"
