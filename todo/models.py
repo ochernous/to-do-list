@@ -8,7 +8,7 @@ class Tag(models.Model):
         ordering = ("name", )
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.name}"
 
 
 class Task(models.Model):
@@ -16,7 +16,7 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(null=True, blank=True)
     is_done = models.BooleanField(default=False)
-    tags = models.ManyToManyField(Tag, related_name="tags")
+    tags = models.ManyToManyField(Tag, related_name="tasks")
 
     class Meta:
         ordering = ("created_at", )
