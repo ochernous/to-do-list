@@ -8,6 +8,7 @@ from todo.models import Tag, Task
 class TaskListView(generic.ListView):
     model = Task
     template_name = "todo/index.html"
+    paginate_by = 4
 
 
 class TaskCreateView(generic.CreateView):
@@ -29,6 +30,7 @@ class TaskDeleteView(generic.DeleteView):
 
 class TagListView(generic.ListView):
     model = Tag
+    paginate_by = 4
 
 
 class TagCreateView(generic.CreateView):
