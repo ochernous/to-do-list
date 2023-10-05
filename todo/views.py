@@ -7,3 +7,7 @@ from todo.models import Tag, Task
 class TasksListView(generic.ListView):
     model = Task
     template_name = "todo/index.html"
+
+
+class TagsListView(generic.ListView):
+    model = Tag
