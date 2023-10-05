@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+from todo.models import Tag, Task
+
+
+def index(request):
+    pass
