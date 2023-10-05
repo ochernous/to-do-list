@@ -8,15 +8,15 @@
     <ul style="list-style-type: none">
       {% for task in task_list %}
         <li>
-          <h5>{{ task.content }}
+          <h4>{{ task.content }}
             {% if task.is_done %}
               <span style="color: green">Done</span><a class="btn btn-secondary" style="float: right" href="#">Undo</a>
             {% else %}
               <span style="color: red">Not done</span><a class="btn btn-success" style="float: right" href="#">Complete</a>
             {% endif %}
-          </h5>
-          <p>Created: {{ task.created_at }} <span style="color: darkred">Deadline: {{ task.deadline }}</span></p>
-          <p>Tags: {{ task.tags.all }} <a href="{% url 'todo:task-update' task.pk %}">Update</a> <a href="{% url 'todo:task-delete' task.pk %}">Delete</a></p>
+          </h4>
+          <h6>Created: {{ task.created_at }} <span style="color: darkred">Deadline: {{ task.deadline }}</span></h6>
+          <h5 class="text-muted">Tags: {{ task.tags.all }} <a href="{% url 'todo:task-update' task.pk %}">Update</a> <a href="{% url 'todo:task-delete' task.pk %}">Delete</a></h5>
           <hr>
         </li>
       {% endfor %}
