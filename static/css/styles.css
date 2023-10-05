@@ -1,0 +1,16 @@
+body {
+    /*margin-top: 25px;*/
+    margin: 40px 30px 30px 5px;
+    color: #444;
+}
+
+.link-to-page {
+    float: right;
+    margin: 0 4px 0 4px;
+}
+
+.sidebar-nav {
+    height: 100%;
+    padding: 10px;
+    list-style: none;
+}
