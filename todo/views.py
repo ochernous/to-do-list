@@ -1,5 +1,7 @@
+from datetime import datetime
+
 from django.shortcuts import redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import generic
 
 from todo.models import Tag, Task
@@ -50,11 +52,10 @@ class TagDeleteView(generic.DeleteView):
     success_url = reverse_lazy("todo:tag-list")
 
 
-# def undo_complete_task_view(request, pk):
-#     task = Task.objects.get(pk=pk)
-#     if task.is_done:
-#         task.is_done = False
-#     else:
-#         task.is_done = True
-#     task.save()
-#
+def undo_complete_task_view(request, pk):
+    task = Task.objects.get(pk=pk)
+    if not task.created_at:
+        task.created_at = datetime.now()
+    task.is_done = not task.is_done
+    task.save()
+    return redirect(reverse("todo:task-list"))
