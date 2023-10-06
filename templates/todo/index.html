@@ -10,9 +10,9 @@
         <li>
           <h4>{{ task.content }}
             {% if task.is_done %}
-              <span style="color: green">Done</span><a class="btn btn-secondary" style="float: right" href="#">Undo</a>
+              <span style="color: green">Done</span><a class="btn btn-secondary" style="float: right" href="{% url 'todo:undo-complete-task' task.pk %}">Undo</a>
             {% else %}
-              <span style="color: red">Not done</span><a class="btn btn-success" style="float: right" href="#">Complete</a>
+              <span style="color: red">Not done</span><a class="btn btn-success" style="float: right" href="{% url 'todo:undo-complete-task' task.pk %}">Complete</a>
             {% endif %}
           </h4>
           <h6>Created: {{ task.created_at }} <span style="color: darkred">Deadline: {{ task.deadline }}</span></h6>
